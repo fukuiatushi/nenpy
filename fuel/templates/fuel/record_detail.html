@@ -1,0 +1,13 @@
+<h1>給油記録の詳細</h1>
+
+<p>日付: {{ record.date }}</p>
+<p>走行距離: {{ record.mileage }}</p>
+<p>給油量: {{ record.fuel_amount }}</p>
+<p>金額: {{ record.amount }}</p>
+<P>メモ: {{ record.memo }}</p>
+
+<a href="{% url 'fuel:record_edit' pk=record.pk %}">編集する</a>
+
+</form>
+
+<a href="{% url 'fuel:record_list' %}">一覧に戻る</a>

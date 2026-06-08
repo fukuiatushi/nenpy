@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>燃費管理</title>
+    </head>
+    <body>
+        <h1>燃費管理</h1>
+
+<a href="{% url 'fuel:record_add' %}">新規追加</a>
+
+<div class="table-wrapper">
+<table>
+    <tr>
+        <th>日付</th>
+        <th>走行距離</th>
+        <th>走行距離差</th>
+        <th>給油量</th>
+        <th>燃費(km/L)</th>
+    </tr>
+
+    {% for r in records %}
+    <tr>
+        <td><a href="{% url 'fuel:record_detail' r.pk %}">{{ r.date }}</a></td>
+        <!-- 走行距離 -->
+         <td>{{ r.odometer }}
+
+        <!-- 走行距離差 -->
+        <td>
+            {% if r.odometer_diff %}
+                {{ r.odometer_diff }} km
+            {% else %}
+                -
+            {% endif %}
+        </td>
+
+        <!-- 給油量 -->
+        <td>{{ r.fuel_liters }} L</td>
+
+        <!-- 燃費 -->
+        <td>
+            {% if r.fuel_efficiency %}
+                {{ r.fuel_efficiency }} km/L
+            {% else %}
+                -
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+</body>
+</html>
+

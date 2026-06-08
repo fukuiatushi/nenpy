@@ -1,0 +1,8 @@
+<h1>給油記録の修正</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">変更する</button>
+</form>
+
+<a href="{% url 'fuel:record_detail' record.pk %}">詳細に戻る</a>

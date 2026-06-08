@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>燃費 新規追加</title>
+
+    <style>
+        /* スマホ画面のときだけ適用 */
+        @media (max-width: 600px) {
+            body {
+                font-size: 20px;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+
+            input, select, textarea {
+                font-size: 20px;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 12px;
+            }
+
+            button {
+                font-size: 22px;
+                padding: 12px;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            label {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>新規追加</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">保存</button>
+</form>
+
+</body>
+</html>
