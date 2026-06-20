@@ -25,7 +25,7 @@ class FuelRecord(models.Model):
     
     @property
     #給油金額＝給油量×ガソリン単価切り上げ   
-    def total_price(self):
+    def calc_total_price(self):
         if self.price_per_liter and self.fuel_liters:
             value=self.price_per_liter * self.fuel_liters
             return math.ceil(value)
