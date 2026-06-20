@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オイル交換記録一覧</title>
+
+    <style>
+        @media (max-width: 600px) {
+            body {
+                font-size: 20px;
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            th, td {
+                border: 1px solid #ccc;
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            th {
+                background-color: #f0f0f0;
+            }
+
+            a {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>オイル交換記録一覧</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>交換日</th>
+                <th>走行距離</th>
+                <th>次回交換距離</th>
+                <th>メモ</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for r in records %}
+            <tr>
+                <td>{{ r.date }}</td>
+                <td>{{ r.odometer }} km</td>
+                <td>{{ r.next_change }} km</td>
+                <td>{{ r.memo }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">記録がありません。</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p><a href="{% url 'fuel:maintenance_add' %}">オイル交換記録を追加</a></p>
+    <p><a href="{% url 'fuel:record_list' %}">給油記録一覧に戻る</a></p>
+
+</body>
+</html>
