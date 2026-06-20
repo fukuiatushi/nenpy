@@ -1,5 +1,5 @@
 from django import forms
-from .models import FuelRecord
+from .models import FuelRecord, MaintenanceRecord
 
 class FuelRecordForm(forms.ModelForm):
     class Meta:
