@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-f79q)%!&16upy(*+9-7u5femos1n#cqblgio)(4wqwt5_^f*!a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['regachan2.pythonanywhere.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['regachan2.pythonanywhere.com', '127.0.0.1', 'localhost', 'nenpy.onrender.com',
+                 ]
 
 
 # Application definition
