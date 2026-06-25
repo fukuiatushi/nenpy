@@ -1,0 +1,37 @@
+{% extends "fuel/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="dashboard-bg"
+     {% if main_img %}
+         style="background-image: url('{{ main_img.image.url }}');"
+     {% else %}
+         style="background-image: url('{% static "img/noimage.jpg" %}');"
+     {% endif %}
+>
+    <div class="overlay"></div>
+
+    <h1 class="title">メンテナンスダッシュボード</h1>
+
+    <div class="menu-container">
+
+        <a href="{% url 'fuel:record_add' %}" class="menu-card">
+            <div class="menu-title">給油</div>
+        </a>
+
+        <a href="{% url 'fuel:record_list' %}" class="menu-card">
+            <div class="menu-title">燃費記録</div>
+        </a>
+
+        <a href="{% url 'fuel:maintenance_list' %}" class="menu-card">
+            <div class="menu-title">メンテ管理</div>
+        </a>
+
+    </div>
+
+    
+
+</div>
+
+{% endblock %}

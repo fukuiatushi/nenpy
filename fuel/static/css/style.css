@@ -1,0 +1,106 @@
+/* 背景画像 */
+.dashboard-bg {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 背景を暗くして文字を見やすくする */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+}
+
+/* タイトル */
+.title {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    padding-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* カードを横並びに */
+.menu-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* カードデザイン */
+.menu-card {
+    width: 260px;
+    padding: 25px;
+    font-size: 20px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.menu-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu-desc {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* アップロードエリア */
+.upload-area {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.upload-btn {
+    padding: 10px 20px;
+    background: #ffffffcc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+/*入力欄をスマホ幅いっぱいに広げる*/
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/*送信ボタンをおおきくする*/
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+/*入力画面の感覚を広げる*/
+form div {
+    margin-bottom: 15px;
+}
+
+
